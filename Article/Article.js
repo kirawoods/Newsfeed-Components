@@ -85,6 +85,15 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Becoming a Self-Taught Female Developer',
+    date: 'September 14, 2019',
+    firstParagraph: `Kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira`,
+
+    secondParagraph: `Kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira`,
+
+    thirdParagraph: `Kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira kira`
   }
 ];
 
@@ -155,16 +164,10 @@ function articleCreator(articleText){
   return article;
 }
  
-const article1 = articleCreator(data[0]);
 
 let articles = document.querySelector('.articles');
-articles.appendChild(article1);
 
-/* <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div> */
+data.forEach((arrayItem) => {
+  let newArticle = articleCreator(arrayItem);
+  articles.appendChild(newArticle);
+});
